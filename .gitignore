@@ -1,5 +1,6 @@
-# Ignore Rust Folder
+# Ignore whole folders
 Rust
+docker-compose/teleport
 
 # Do not upload secrets to Github
 # Secrets is saved in enviorment files

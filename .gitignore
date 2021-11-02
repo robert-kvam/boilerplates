@@ -3,9 +3,9 @@ Rust
 
 # Do not upload secrets to Github
 # Secrets is saved in enviorment files
-Docker/.env/*
-Docker-Compose/.env/*
-Kubernetes/.env/*
+Dockerfiles/*/.env/*
+docker-compose/*/.env/*
+kubernetes/*/.env/*
 
 # Local .terraform directories
 **/.terraform/*

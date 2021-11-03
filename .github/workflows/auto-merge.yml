@@ -10,9 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     environment: main
     steps:
-      - name: Merge Pull Request
-        uses: juliangruber/merge-pull-request-action@v1
+      - name: Auto-Merge Pull Request
+        # You may pin to the exact commit or the version.
+        # uses: reitermarkus/automerge@72bc1353d0a084c84034be23424b124d900d1658
+        uses: reitermarkus/automerge@v1.5.2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: 1
-          method: squash
+          # A GitHub Token other than the default `GITHUB_TOKEN` needs to be specified in order to be able to trigger other workflows.
+
+          token: ${{ github.token }}
+          # Specify which merge method to use. By default, will select the first one available in this order: `merge`, `squash`, `rebase`
+
+          merge-method: squash
+          # Use the pull request title as the commit message when squashing.
+
+          required-labels: # optional
+          # Try merging the specified pull request automatically. For example, you can pass an input from a `workflow_dispatch` event.
+
+          pull-request: robert-kvam
+          # Comma-separated list of required author associations for the pull request author. (By default, pull requests by any author are allowed.)
+          dry-run: yes

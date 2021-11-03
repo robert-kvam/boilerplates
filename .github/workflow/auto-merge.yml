@@ -1,7 +1,4 @@
-# Pull requests from staging should be automaticly accepted and merged with main
-name: Deployment
-
-concurrency: production
+name: Auto-Merge
 
 on:
   pull_request:

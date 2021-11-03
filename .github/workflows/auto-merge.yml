@@ -19,4 +19,3 @@ jobs:
           token: ${{ github.token }}
           # Specify which merge method to use. By default, will select the first one available in this order: `merge`, `squash`, `rebase`
           merge-method: squash
-          dry-run: true

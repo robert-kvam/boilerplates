@@ -6,7 +6,16 @@ docker-compose/teleport
 # Secrets is saved in enviorment files
 Dockerfiles/*/.env/*
 docker-compose/*/.env/*
-kubernetes/*/.env/*
+kubernetes/.env/*
+teleport/*/.env/*
+terraform/.env/*
+
+# Make it so that this files gets uploaded anyways.
+!Dockerfiles/*/.env/template.env
+!docker-compose/*/.env/template.env
+!kubernetes/.env/template.env
+!teleport/*/.env/template.env
+!terraform/*/.env/template.env
 
 # Local .terraform directories
 **/.terraform/*

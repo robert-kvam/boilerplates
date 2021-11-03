@@ -1,0 +1,58 @@
+teleport:
+  nodename: teleport-aio
+  data_dir: /var/lib/teleport
+  ca_pin: ""
+  
+  advertise_ip: 127.0.0.1
+  auth_servers:
+    - 127.0.0.1:3025
+  
+  connection_limits:
+    max_connections: 1000
+    max_users: 250
+  
+  log:
+    output: /var/lib/teleport/teleport.log
+    severity: ERROR
+    format:
+      output: text
+      extra_fields: [level, timestamp, component, caller]
+  storage:
+    type: dir
+
+# Auth config
+auth_service:
+  enabled: "yes"
+
+# SSH config
+ssh_service:
+  enabled: "yes"
+  listen_addr: 0.0.0.0:3022
+  public_addr: node.example.com:3022
+  labels:
+    role: example
+    type: example
+  commands:
+  - name: dyn_label
+    command: ['/bin/uname','-p']
+    period: 1h0m0s
+
+# Routing and proxy config
+proxy_service:
+  enabled: "yes"
+  listen_addr: 0.0.0.0:3023
+  ssh_public_addr: proxy.example.com:3023
+  tunnel_listen_addr: 0.0.0.0:3024
+  tunnel_public_addr: proxy.example.com:3024
+  web_listen_addr: 0.0.0.0:3080
+  public_addr: proxy.example.com:3080
+
+  kube_listen_addr: 0.0.0.0:3026
+  kube_public_addr: kube.example.com:3026
+
+  mysql_listen_addr: "0.0.0.0:3036"
+  postgres_public_addr: "postgres.teleport.example.com:443"
+  mysql_public_addr: "mysql.teleport.example.com:3306"
+
+# app_service:
+# kubernetes_service:

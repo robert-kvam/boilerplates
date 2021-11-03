@@ -1,0 +1,18 @@
+version: "3.7"
+
+networks:
+  main:
+volumes:
+  portainer:
+
+services:
+  app:
+    image: portainer/portainer-ce
+    ports:
+      - 8000:8000
+      - 9000:9000
+      - 9433:9433
+    networks:
+      - inimaint
+    volumes:
+      - portainer:/data

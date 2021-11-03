@@ -1,0 +1,21 @@
+# Pull requests from staging should be automaticly accepted and merged with main
+name: Deployment
+
+concurrency: production
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Merge Pull Request
+      uses: juliangruber/merge-pull-request-action@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        number: 1
+        method: squash

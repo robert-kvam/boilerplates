@@ -1,3 +1,6 @@
+# Ignore workflow folder changes
+.github/workflow
+
 # Ignore whole folders
 Rust
 docker-compose/teleport

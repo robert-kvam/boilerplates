@@ -1,0 +1,36 @@
+name: Label handling
+
+on:
+  pull-request:
+    branches:
+      - main
+      - staging
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto Labeling
+        # You may pin to the exact commit or the version.
+        # uses: harupy/auto-labeling@03cdc56d0b56e0c1d4eb1bf68b53f8ec8b5f03e9
+        uses: harupy/auto-labeling@v0.0.2
+        with:
+          # GitHub token
+          repo-token: 
+          # 'Pattern (regular expression) to extract label state and name (e.g. "- \[(.*?)\] ?`(.+?)`").'
+
+          label-pattern: "In-review"
+          # Suppress logging output. Must be either "true" or "false"
+          quiet: # optional, default is false
+
+      - name: Require Labels
+        # You may pin to the exact commit or the version.
+        # uses: mheap/github-action-required-labels@c1021ae643be7256d21caec582af08f09f71379e
+        uses: mheap/github-action-required-labels@v1
+        with:
+          # Comma separated list of labels to match
+          labels: 
+          # The mode of comparison to use. One of: exactly, minimum, maximum
+          mode: 
+          # The required number of labels to match
+          count: 

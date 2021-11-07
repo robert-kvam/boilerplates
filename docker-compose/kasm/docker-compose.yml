@@ -3,15 +3,15 @@ version: "3"
 networks:
   kasm:
 volumes:
-  storage-1:
+  kasm-data:
 
 services:
   app:
-    image: kasmweb/manager
+    image: kasmweb/manager:1.9.0
     ports:
       - 80:80
       - 443:443
     networks:
       - kasm
     volumes:
-      - storage-1:/root
+      - kasm-data:/data

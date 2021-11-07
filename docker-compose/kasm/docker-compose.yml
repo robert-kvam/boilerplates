@@ -1,0 +1,17 @@
+version: "3"
+
+networks:
+  kasm:
+volumes:
+  storage-1:
+
+services:
+  app:
+    image: kasmweb/manager
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - kasm
+    volumes:
+      - storage-1:/root

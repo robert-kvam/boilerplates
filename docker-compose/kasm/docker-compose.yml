@@ -9,9 +9,11 @@ services:
   app:
     image: kasmweb/manager:1.9.0
     ports:
-      - 80:80
-      - 443:443
+      - 6901:6901
     networks:
       - kasm
     volumes:
       - kasm-data:/data
+    enviorments:
+      - VNC_PW=password
+    shm-size: 512m

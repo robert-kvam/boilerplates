@@ -1,0 +1,5 @@
+[container top=35% right=0% bottom=0% left=0%]
+    [xcenter]
+        [h size=12%]Welcome to LibreSignage![/h]
+    [/xcenter]
+[/container]

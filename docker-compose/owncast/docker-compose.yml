@@ -3,10 +3,10 @@ version: "3.7"
 networks:
   init:
 volumes:
-  libre-data:
+  owncast-data:
 
 services:
-  app:
+  owncast:
     image: gabekangas/owncast:latest
     ports:
       - 4343:8080

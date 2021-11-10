@@ -1,0 +1,16 @@
+version: "3.7"
+
+networks:
+  init:
+volumes:
+  libre-data:
+
+services:
+  app:
+    image: eerotal/libresignage:1.9.0
+    ports:
+      - 8080:80
+    networks:
+      - init
+    volumes:
+      - libre-data:/data

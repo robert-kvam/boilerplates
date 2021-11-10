@@ -21,6 +21,10 @@ terraform/.env/*
 !teleport/*/.env/template.env
 !terraform/*/.env/template.env
 
+
+# Remove internal Xibo content
+**/xibo-signage/shared
+
 # Local .terraform directories
 **/.terraform/*
 

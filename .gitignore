@@ -9,6 +9,7 @@ docker-compose/teleport
 # Secrets is saved in enviorment files
 Dockerfiles/*/.env/*
 docker-compose/*/.env/*
+docker-compose/*/*.env
 kubernetes/.env/*
 teleport/*/.env/*
 terraform/.env/*

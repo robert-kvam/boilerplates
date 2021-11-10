@@ -1,0 +1,16 @@
+version: "3.7"
+
+networks:
+  init:
+volumes:
+  libre-data:
+
+services:
+  app:
+    image: eerotal/libresignage:next-nightly
+    ports:
+      - 8080:80
+    networks:
+      - init
+    volumes:
+      - libre-data:/var/www/html/data

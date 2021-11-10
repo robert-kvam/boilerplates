@@ -1,7 +1,7 @@
 version: "3.7"
 
 networks:
-  main:
+  init:
 volumes:
   portainer:
 
@@ -13,6 +13,7 @@ services:
       - 9000:9000
       - 9433:9433
     networks:
-      - inimaint
+      - init
     volumes:
       - portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock

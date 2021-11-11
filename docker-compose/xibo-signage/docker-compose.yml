@@ -38,7 +38,7 @@ services:
             - MEMCACHED_HOST=cms-memcached
         env_file: config.env
         ports:
-            - "880:80"
+            - "80:80"
         mem_limit: 1g
     cms-memcached:
         image: memcached:alpine

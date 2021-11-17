@@ -1,0 +1,22 @@
+version: "3.7"
+
+volumes:
+  audacity:
+networks:
+  backend:
+
+services:
+  audacity:
+    image: "linuxserver/audacity"
+    container_name: "tp_audacity"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Oslo
+    volumes:
+      - audacity:/config
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
+    restart: unless-stopped

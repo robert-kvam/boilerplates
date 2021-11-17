@@ -1,0 +1,29 @@
+version: "3.7"
+
+volumes:
+  transmission:
+  download:
+  watch:
+networks:
+  backend:
+
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission
+    container_name: "tp_transmission"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Oslo
+      - USERNAME=value
+      - PASSWORD=value
+    volumes:
+      - transmission:/config
+      - download:/downloads
+      - watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+    networks:
+      - backend
+    restart: unless-stopped

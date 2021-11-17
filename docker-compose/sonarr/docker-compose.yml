@@ -1,0 +1,18 @@
+version: "3.7"
+
+volumes:
+  sonarr:
+networks:
+  backend:
+
+services:
+  sonarr:
+    image: "linuxserver/sonarr"
+    container_name: "tp_sonarr"
+    volumes:
+      - sonarr:/config
+    ports:
+      - "8989:8989"
+    networks:
+      - backend
+    restart: unless-stopped

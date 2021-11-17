@@ -1,0 +1,19 @@
+version: "3.7"
+
+volumes:
+  heimdall:
+networks:
+  backend:
+
+services:
+  heimdall:
+    image: "linuxserver/heimdall"
+    container_name: "tp_heimdall"
+    volumes:
+      - heimdall:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - backend
+    restart: unless-stopped

@@ -24,6 +24,7 @@ terraform/.env/*
 
 # Remove internal Xibo content
 **/xibo-signage/shared
+docker-compose\xibo-signage\shared
 
 # Local .terraform directories
 **/.terraform/*

@@ -3,7 +3,7 @@
 
 # Ignore whole folders
 Rust
-docker-compose/teleport
+docker-compose/teleport/.env
 
 # Do not upload secrets to Github
 # Secrets is saved in enviorment files

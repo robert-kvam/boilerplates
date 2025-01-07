@@ -1,8 +1,6 @@
 # Boilerplates for Automation and Deployment
 These are my templates and configurations I use in various projects and deployment scenarios. They are based on automation and deployment tools such as [Ansible](https://github.com/robert-kvam/boilerplates/tree/main/ansible), [Docker](https://github.com/robert-kvam/boilerplates/tree/main/docker-compose), [Terraform](https://github.com/robert-kvam/boilerplates/tree/main/terraform), and much more.
 
-I've done a thing.
-
 ### Warning
 Please beware that products can change over time. I do my best to keep up with the latest changes and releases, but please understand that this won’t always be the case.
 

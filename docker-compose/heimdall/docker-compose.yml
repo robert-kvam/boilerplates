@@ -2,6 +2,7 @@ version: "3.7"
 
 volumes:
   heimdall:
+  time-data:
 networks:
   backend:
 
@@ -17,3 +18,12 @@ services:
     networks:
       - backend
     restart: unless-stopped
+  timetagger:
+    image: piaverous/timetagger:v21.3.3
+    container_name: "tp_tagger"
+    ports:
+      - 8888:80
+    networks:
+      - backend
+    volumes:
+      - time-data:/root

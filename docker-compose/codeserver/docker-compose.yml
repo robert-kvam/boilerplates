@@ -1,0 +1,24 @@
+version: "3.7"
+
+volumes:
+  code-server:
+networks:
+  backend:
+
+services:
+  code-server:
+    image: linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Oslo
+      - PASSWORD=pass #optional
+      - SUDO_PASSWORD=word #optional
+    volumes:
+      - code-server:/config
+    networks:
+      - backend
+    ports:
+      - 8443:8443
+    restart: unless-stopped
